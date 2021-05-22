@@ -15,21 +15,26 @@
         <h1>Spam Classifier</h1>
         <h2>Write your email here:</h2>
         <div class="container">
-            {% if is_spam %}
-                <img src="{% static 'images/akhanh.jpg' %}" id="hp" alt="uh oh, sth wrong">
+            {% if is_classified %}
+                {% if is_spam %}
+                    <img src="{% static 'images/akhanh.jpg' %}" id="hp" alt="uh oh, sth wrong">
+                {% else %}
+                    <img src="{% static 'images/akhang.jpg' %}" id="hp" alt="uh oh, sth wrong">
+                {% endif %}
             {% else %}
-                <img src="{% static 'images/akhang.jpg' %}" id="hp" alt="uh oh, sth wrong">
+                <img src="{% static 'images/akhang.jpg' %}" style="opacity:0" id="hp" alt="uh oh, sth wrong">
             {% endif %}
             <form method="POST">
                 {{form.as_p}}
                 {% csrf_token %}
                 <input type="submit" class="btn btn-primary" value="Submit">
             </form>
-
-            {% if is_spam %}
-                <p id="is_spam">Your email is a spam</p>
-            {% else %}
-                <p id="is_spam">Your email is not a spam</p>
+            {% if is_classified %}
+                {% if is_spam %}
+                    <p id="is_spam">Your email is a spam</p>
+                {% else %}
+                    <p id="is_spam">Your email is not a spam</p>
+                {% endif %}
             {% endif %}
 
         </div>
