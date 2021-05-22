@@ -8,12 +8,13 @@ from spamapp.classifier import SpamClassifer
 def index(request):
     # stock_list = HistoricalPrice1Hour.objects.order_by('name')
     form = forms.FormName()
-
+    is_spam = False
     if request.method == 'POST':
         form = forms.FormName(request.POST)
         if form.is_valid():
             mail = form.cleaned_data['subject'] + ' ' + form.cleaned_data['text']
-            print(SpamClassifer.classify(mail))
+            is_spam = SpamClassifer.classify(mail)
+            print(is_spam)
 
-    response = render(request, 'index.html', {'form':form})
+    response = render(request, 'index.html', {'form':form, 'is_spam':is_spam})
     return response

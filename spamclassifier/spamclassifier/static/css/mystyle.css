@@ -1,3 +1,46 @@
 h1 {
     color: red;
+    text-align: center;
 }
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    margin-left: 450px;
+}
+
+#is_spam {
+    text-align: center;
+    color: yellow;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+#hp  {
+    float: right;    
+    margin: 0 0 0 15px;
+    width: 600px;
+    height: 650px;
+}
+
+img {
+    opacity: 0.5;
+}
+
+#bg { 
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
