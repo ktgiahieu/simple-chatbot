@@ -1,2 +1,3 @@
-# simple-chatbot
+# Simple Email Classifier
+
 Simple chatbot
